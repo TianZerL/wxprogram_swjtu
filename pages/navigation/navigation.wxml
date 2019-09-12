@@ -1,0 +1,5 @@
+<!--pages/navigation/navigation.wxml-->
+<view>
+  <map class="map"  longitude="{{longitude}}" latitude="{{latitude}}">
+  </map>
+</view>

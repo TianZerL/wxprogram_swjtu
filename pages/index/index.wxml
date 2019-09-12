@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <button type="primary" bindtap="bindIntroduceTap">介绍</button>
+    <button type="primary" bindtap="bindnavigationTap">导航</button>
+  </view>
+</view>
