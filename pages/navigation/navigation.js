@@ -6,13 +6,26 @@ Page({
    */
   data: {
     longitude: 103.991121,
-    latitude: 30.770424
+    latitude: 30.770424,
+    currData: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    wx.getLocation({
+      success: function (res) {
+        var longitude = res.longitude;
+        var latitude = res.latitude;
+
+        that.setData({
+          longitude: longitude,
+          latitude: latitude,
+        })
+      },
+    })
 
   },
 
@@ -63,5 +76,22 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  pagechang: function (e) {
+    this.setData({
+      currData: e.detail.current
+    })
+  },
+
+  currpage: function (e) {
+    if (this.data.currData === e.target.dataset.current) {
+      return false;
+    } else {
+      this.setData({
+        currData: e.target.dataset.current
+      })
+    }
+  },
+
 })

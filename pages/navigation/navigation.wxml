@@ -1,5 +1,21 @@
 <!--pages/navigation/navigation.wxml-->
 <view>
-  <map class="map"  longitude="{{longitude}}" latitude="{{latitude}}">
+  <map class="map" longitude="{{longitude}}" latitude="{{latitude}}">
   </map>
 </view>
+<view class='topTabSwiper'>
+  <view class='tab  {{currData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='currpage'>教学楼</view>
+  <view class='tab  {{currData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='currpage'>服务区</view>
+  <view class='tab  {{currData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='currpage'>寝室楼</view>
+</view>
+<swiper current="{{currData}}" bindchange='pagechang'>
+  <swiper-item>
+    <button type="primary" >1教</button>
+  </swiper-item>
+  <swiper-item>
+    <button type="primary">1服</button>
+  </swiper-item>
+  <swiper-item>
+    <button type="primary">天佑斋16栋</button>
+  </swiper-item>
+</swiper>
